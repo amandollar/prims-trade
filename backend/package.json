@@ -1,0 +1,33 @@
+{
+  "name": "prims-trade-backend",
+  "version": "1.0.0",
+  "description": "Production-ready microservices backend - API Gateway, Auth, User, Trade Signal services",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "api-gateway",
+    "auth-service",
+    "user-service",
+    "trade-signal-service"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build -w shared",
+    "dev": "npx concurrently \"npm run dev:gateway\" \"npm run dev:auth\" \"npm run dev:user\" \"npm run dev:trade-signal\"",
+    "dev:gateway": "npm run dev -w api-gateway",
+    "dev:auth": "npm run dev -w auth-service",
+    "dev:user": "npm run dev -w user-service",
+    "dev:trade-signal": "npm run dev -w trade-signal-service",
+    "start": "node dist/server.js",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "prims-trade",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prims Trade – Backend (microservices) + Frontend (Next.js)",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend"
+  }
+}
