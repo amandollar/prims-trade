@@ -1,5 +1,5 @@
 export const config = {
-  port: parseInt(process.env.TRADE_SIGNAL_SERVICE_PORT ?? '3003', 10),
+  port: parseInt(process.env.PORT ?? process.env.TRADE_SIGNAL_SERVICE_PORT ?? '3003', 10),
   nodeEnv: process.env.NODE_ENV ?? 'development',
   mongodb: {
     uri: process.env.MONGODB_URI ?? 'mongodb://localhost:27017/prims-trade',
