@@ -1,5 +1,5 @@
 export const config = {
-  port: parseInt(process.env.PORT ?? process.env.GATEWAY_PORT ?? '3000', 10),
+  port: parseInt(process.env.PORT || process.env.GATEWAY_PORT || '3000', 10) || 3000,
   nodeEnv: process.env.NODE_ENV ?? 'development',
   authServiceUrl: process.env.AUTH_SERVICE_URL ?? 'http://localhost:3001',
   userServiceUrl: process.env.USER_SERVICE_URL ?? 'http://localhost:3002',
