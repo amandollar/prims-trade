@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json({ limit: '100kb' }));
 app.use(requestIdMiddleware);
 
+app.get('/', (_req, res) => res.status(200).json({ ok: true, service: 'auth' }));
+app.get('/ping', (_req, res) => res.status(200).json({ ok: true }));
 app.get('/health', (_req, res) => res.status(200).json({ status: 'ok', service: 'auth' }));
 app.use('/api/v1/auth', authRoutes);
 

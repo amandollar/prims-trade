@@ -39,6 +39,8 @@ const authLimiter = rateLimit({
   legacyHeaders: false,
 });
 
+app.get('/', (_req, res) => res.status(200).json({ ok: true, service: 'gateway' }));
+app.get('/ping', (_req, res) => res.status(200).json({ ok: true }));
 app.get('/health', (_req, res) => {
   res.status(200).json({
     success: true,
